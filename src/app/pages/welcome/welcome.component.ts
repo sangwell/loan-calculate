@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-welcome',
@@ -9,21 +9,21 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class WelcomeComponent implements OnInit {
   validateForm!: FormGroup;
   //原价
-  totalPrice: number | undefined = 243900;
+  totalPrice: number = 243900;
   //首付比例
-  firstPayPercent: string | number | undefined = '0.15';
+  firstPayPercent: string = '0.15';
   //贷款金额
-  loanCount: number | undefined;
+  loanCount: number = 0;
   //期数
-  periods: string | number | undefined = '60';
+  periods: string = '60';
   //年化费率
-  yearRate: string | number | undefined = '4.33';
+  yearRate: string = '4.33';
   //贷款月供
-  monthlySupply: number | undefined = 5000;
+  monthlySupply: number= 0;
   //总付款
-  finalPay: number | undefined = 5000;
+  finalPay: number= 0;
   //差值
-  diff: number | undefined = 5000;
+  diff: number = 0;
 
   constructor(private fb: FormBuilder) {
   }
@@ -39,6 +39,14 @@ export class WelcomeComponent implements OnInit {
       // finalPay: [null, [Validators.required]],
       // diff: [null, [Validators.required]],
     });
+  }
+
+  onFirstPayChange(value: any) {
+    console.log('d', value);
+    if (value) {
+      const v = Number(value);
+      this.loanCount = this.totalPrice * (1 - v);
+    }
   }
 
 }
