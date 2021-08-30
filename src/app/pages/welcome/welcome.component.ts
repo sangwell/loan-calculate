@@ -22,6 +22,8 @@ export class WelcomeComponent implements OnInit {
   monthlySupply: number | undefined = 5000;
   //总付款
   finalPay: number | undefined = 5000;
+  //差值
+  diff: number | undefined = 5000;
 
   constructor(private fb: FormBuilder) {
   }
@@ -34,7 +36,8 @@ export class WelcomeComponent implements OnInit {
       periods: [null, [Validators.required]],
       yearRate: [null, [Validators.required]],
       monthlySupply: [null, [Validators.required]],
-      finalPay: [null, [Validators.required]],
+      // finalPay: [null, [Validators.required]],
+      // diff: [null, [Validators.required]],
     });
   }
 

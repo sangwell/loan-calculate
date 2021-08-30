@@ -7,6 +7,8 @@ import {NzFormModule} from 'ng-zorro-antd/form';
 import {NzInputModule} from 'ng-zorro-antd/input';
 import {NzInputNumberModule} from 'ng-zorro-antd/input-number';
 import {NzSelectModule} from 'ng-zorro-antd/select';
+import {NzButtonModule} from 'ng-zorro-antd/button';
+import {NzDividerModule} from 'ng-zorro-antd/divider';
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import {NzSelectModule} from 'ng-zorro-antd/select';
     NzFormModule,
     NzInputModule,
     NzInputNumberModule,
-    NzSelectModule
+    NzSelectModule,
+    NzButtonModule,
+    NzDividerModule
   ],
   declarations: [WelcomeComponent],
   exports: [WelcomeComponent]
