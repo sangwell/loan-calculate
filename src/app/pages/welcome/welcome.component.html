@@ -1,0 +1,67 @@
+<h1>loan LC</h1>
+<div nz-row [nzGutter]="16">
+  <div nz-col class="gutter-row" [nzSpan]="12">
+    <form nz-form [formGroup]="validateForm">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="email">总价</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-input-number formControlName="totalPrice" [(ngModel)]="totalPrice" [nzStep]="1"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="email">首付</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-select [(ngModel)]="firstPayPercent" formControlName="firstPayPercent">
+            <nz-option nzValue="0.15" nzLabel="15%"></nz-option>
+            <nz-option nzValue="0.2" nzLabel="20%"></nz-option>
+            <nz-option nzValue="0.3" nzLabel="30%"></nz-option>
+            <nz-option nzValue="0.4" nzLabel="40%"></nz-option>
+            <nz-option nzValue="0.5" nzLabel="50%"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="email">贷款金额</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-input-number formControlName="loanCount" [(ngModel)]="loanCount" [nzDisabled]="true"
+                           [nzStep]="1"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="email">期数</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-select [(ngModel)]="periods" formControlName="periods">
+            <nz-option nzValue="12" nzLabel="12个月"></nz-option>
+            <nz-option nzValue="24" nzLabel="24个月"></nz-option>
+            <nz-option nzValue="36" nzLabel="36个月"></nz-option>
+            <nz-option nzValue="48" nzLabel="48个月"></nz-option>
+            <nz-option nzValue="60" nzLabel="60个月"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="email">年化费率</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-input-number formControlName="yearRate" [(ngModel)]="yearRate" [nzDisabled]="true"
+                           [nzStep]="1"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="email">贷款月供</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-input-number formControlName="monthlySupply" [(ngModel)]="monthlySupply" [nzDisabled]="true"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="email">总付款</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-input-number formControlName="finalPay" [(ngModel)]="finalPay" [nzDisabled]="true"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+  <div nz-col class="gutter-row" [nzSpan]="12">
+    <div class="inner-box">结果：</div>
+  </div>
+</div>
+
